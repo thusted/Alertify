@@ -1,0 +1,9 @@
+body {
+    background-color: cadetblue;
+    font-family: GillSans, Calibri, Trebuchet, sans-serif;
+}
+
+img {
+    height: 11rem;
+    vertical-align:middle
+}
