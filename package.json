@@ -1,0 +1,23 @@
+{
+  "name": "alertify",
+  "version": "1.0.0",
+  "description": "Mobile App For Safety",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint \"./**/*.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thusted/Alertify.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thusted/Alertify/issues"
+  },
+  "homepage": "https://github.com/thusted/Alertify#readme",
+  "dependencies": {
+    "eslint": "^7.6.0"
+  }
+}
