@@ -105,5 +105,18 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+<script>
+  const successCallback = (position) => {
+    console.log(position);
+  };
+
+  const errorCallback = (position) => {
+    console.error(error);
+  };
+
+  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+</script>
+
 </body>
 </html>
