@@ -43,16 +43,16 @@
         
               <!--   Main Body About Alertify   -->
               <div class="row">
-                <div class="card-panel l3 s12 teal lighten-3 center-block">
-                    <h2 class="center-align">
-                        Test Button Below
-                    </h2>
-                    <center>
-                        <a href="#">
-                        <img src="./assets/img/alertifyLogo.png" id="tracking" height="300"></a>
-                    </center>
-                  </div>
-                  </div>
+                <!-- Adding Google Maps -->
+                <div id="embedMap" class="center">
+                <!--Google map will be embedded here-->
+                </div>
+                    <div class="center">
+                      <a href="#">
+                        <img src="./assets/img/alertifyLogo.png" id="tracking"></a>
+                        <h5>Click To Alertify</h5>
+                    </div>
+              </div>
             </div>
           </div>
 
@@ -95,6 +95,23 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script>
+  const successCallback = (position) => {
+    var lat = position.coords.latitude;
+    var long = position.coords.longitude;
+    var apiKey = "AIzaSyBos6JoNIqsI5Qz1VH0TsonjPQw4fp4zb0";
+    var location = "https://www.google.com/maps/embed/v1/view?key=" + apiKey + "&center=" + lat +"," + long + "&zoom=18&maptype=satellite";
+    $("#embedMap").append(`<iframe width="600" height="450" frameborder="0" style="border:0" src=' ${location} '"allowfullscreen"</iframe>`);
+  };
+
+  const errorCallback = (position) => {
+    console.error(error);
+  };
+
+  const watchId = navigator.geolocation.watchPosition(successCallback, errorCallback);
+  //if button is pressed to be safe
+  //navigator.geolocation.clearWatch(watchId);
+</script>
 
 <!-- Javascript file for hooking up Quick Easy SMS -->
 <script src="./assets/js/sendText.js"></script>
