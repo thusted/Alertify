@@ -100,7 +100,7 @@
     var lat = position.coords.latitude;
     var long = position.coords.longitude;
     var apiKey = "AIzaSyBos6JoNIqsI5Qz1VH0TsonjPQw4fp4zb0";
-    var location = "https://www.google.com/maps/embed/v1/view?key=" + apiKey + "&center=" + lat +"," + long + "&zoom=18&maptype=satellite";
+    var location = "https://www.google.com/maps/embed/v1/search?key=" + apiKey + "&q=" + lat +"," + long + "&zoom=17&maptype=satellite";
     $("#embedMap").append(`<iframe width="600" height="450" frameborder="0" style="border:0" src=' ${location} '"allowfullscreen"</iframe>`);
   };
 
