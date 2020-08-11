@@ -3,7 +3,10 @@ body {
     font-family: GillSans, Calibri, Trebuchet, sans-serif;
 }
 
-img {
-    height: 11rem;
-    vertical-align:middle
+#alertBan {
+    height: 6rem;
+    display:block;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right:auto;
 }
