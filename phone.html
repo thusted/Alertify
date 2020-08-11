@@ -11,8 +11,10 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-            
-    <title>Alertify - Shielded 24/7</title>
+    <!-- Cookie Banner -->
+    <!-- <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <div class="elfsight-app-bb2e2e2a-43a5-4c7b-a061-dab68438c57c"></div> -->
+    <title>Alertify - Contact Us - Phone</title>
 </head>
 <body>
 
@@ -24,6 +26,8 @@
             <div class="nav-wrapper teal lighten-2 z-depth-1">
               <!-- Our Navbar -->
               <ul class="left">
+                <li><a href="index.html">
+                  <i class="material-icons prefix">home</i></a></li>
                 <li><a href="login.html">Login</a></li>
                 <li><a href="contacts.html">Contacts</a></li>
                 <li class="active"><a href="tracker.html">Tracker</a></li>
@@ -35,38 +39,40 @@
         
               <!--   Main Body About Alertify   -->
               <div class="row">
-                <div class="col s12 m4">
-                  <div class="icon-block">
-                    <h2 class="center brown-text"><i class="small material-icons">notifications_active</i></h2>
-                    <h5 class="center">Safer Future</h5>
-        
-                    <p class="light">This application can provide users with additional security in case of an emergency. If something happened in need of an immediate rescue, send an alert with <b>Alertify</b>.</p>
+                <div class="card-panel l3 s12 center-block">
+                  <div class="card-body">
+                    <h5>Call Us Or Have Us Call You</h5>
+                    <p><i class="material-icons">
+                      <a href="#">phone</i>1-800-ALERTFY</a></p>
+                    <!-- Contact Form -->
+                    <form>
+                      <div class="form-group">
+                        <label for="namePhoneInput">Name:</label>
+                        <br>
+                        <input type="name" class="form-control" id="namePhoneInput" placeholder="First & Last Name">
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <label for="phoneInput">Phone Number:</label>
+                        <br>
+                        <input type="phone" class="form-control" id="phoneInput" placeholder="XXX-XXX-XXXX">
+                      </div>
+                      <br>
+                      <div class="input-field">
+                        <input type="text" class="timepicker" id="timeInput">
+                        <label for="timeInput">Best Time To Call</label>
+                      </div>
+                      <br>
+                      <input class="btn btn-primary" type="submit" value="Submit">
+                    </form>
+                    <!-- End Form -->
                   </div>
-                </div>
-        
-                <div class="col s12 m4">
-                  <div class="icon-block">
-                    <h2 class="center brown-text"><i class="small material-icons">supervisor_account</i></h2>
-                    <h5 class="center">User Focused</h5>
-        
-                    <p class="light">With <b>Alertify</b> the user can focus on settings exclusive to their needs for assistance. Without the need for 911, you can have your favorite contacts alerted with an automated text/email with custom message and current location.</p>
                   </div>
-                </div>
-        
-                <div class="col s12 m4">
-                  <div class="icon-block">
-                    <h2 class="center brown-text"><i class="small material-icons">my_location</i></h2>
-                    <h5 class="center">Simplicity</h5>
-        
-                    <p class="light">What separates <b>Alertify</b> from everyone else is simplicity. We simpliefied the interface for you. Select the options you want, select the contacts to be notified, and type the message you want sent. Now incase of an emergency, click the red button to <b>Alertify</b>.</p>
                   </div>
-                </div>
-              </div>
-        
             </div>
           </div>
 
- <!-- Footer -->
+  <!-- Footer -->
 <footer class="page-footer teal">
   <div class="container">
     <div class="row">
@@ -91,7 +97,7 @@
         </ul>
       </div>
       <div class="col l3 s12">
-        <img src="./assets/img/alertifyLogo.png" height="300px">
+        <img src="./assets/img/alertifyLogo.png" height="200px">
       </div>
     </div>
   </div>
@@ -105,5 +111,6 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="assets/js/materialize.js"></script>
 </body>
 </html>
