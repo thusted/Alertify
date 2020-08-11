@@ -14,7 +14,7 @@ const settings = {
   data: {
     callbackURL: "https://example.com/abcd",
     message: "User has initiated tracking on Alertify.",
-    toNumber: "13607212988", //Number goes here
+    toNumber: "1XXXXXXXXXX", //Number goes here
   },
 };
 
@@ -32,7 +32,7 @@ const settings2 = {
   data: {
     callbackURL: "https://example.com/abcd",
     message: "User has initiated tracking on Alertify.",
-    toNumber: "13607720226", //Number goes here
+    toNumber: "1XXXXXXXXXX", //Number goes here
   },
 };
 
@@ -50,7 +50,7 @@ const settings3 = {
   data: {
     callbackURL: "https://example.com/abcd",
     message: "User has initiated tracking on Alertify.",
-    toNumber: "13607212988", //Number goes here
+    toNumber: "1XXXXXXXXXX", //Number goes here
   },
 };
 
