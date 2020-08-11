@@ -13,6 +13,17 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+// timePicker //
+const timer = document.querySelector('.timepicker');
+  M.Timepicker.init(timer,{
+    change: function(timer) {
+      var element = $(this), text;
+      var timepicker = element.timepicker();
+      text = 'Selected Callback Time Is: ' + timepicker.format(time);
+      element.siblings('span.help-line').text(text);
+    }
+  });
+
 /*! cash-dom 1.3.5, https://github.com/kenwheeler/cash @license MIT */
 (function (factory) {
   window.cash = factory();
