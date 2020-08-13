@@ -1,23 +1,23 @@
 {
   "development": {
     "username": "root",
-    "password": "love_bob1",
-    "database": "alertify_db",
-    "host": "127.0.0.1",
+    "password": "",
+    "database": "",
+    "host": "",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "love_bob1",
-    "database": "alertify_db",
-    "host": "127.0.0.1",
+    "password": "",
+    "database": "",
+    "host": "",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "love_bob1",
-    "database": "alertify_db",
-    "host": "127.0.0.1",
+    "password": "",
+    "database": "",
+    "host": "",
     "dialect": "mysql"
   }
 }
