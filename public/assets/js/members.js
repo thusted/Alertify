@@ -5,6 +5,7 @@ $(document).ready(function() {
     $(".username").text(data.username);
     $(".userEmail").text(data.email);
     $(".userPassword").text(data.password);
+    $(".member-name").text(data.email);
   });
 });
 
@@ -12,5 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
   var elem = document.querySelector('.collapsible.popout');
   var instance = M.Collapsible.init(elem, {
   accordion: false
+});
 });
 });
