@@ -1,2 +1,3 @@
 node_modules
-assets/js/materialize.js
+public/assets/js/materialize.js
+models/index.js
