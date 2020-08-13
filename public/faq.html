@@ -18,25 +18,21 @@
     <!-- jQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     
-    <title>Alertify - Tracking</title>
+    <title>Alertify - My Account</title>
 </head>
 <body>
 
-    <div class="container z-depth-4 teal lighten-5">
-      <!-- Header/Banner -->
-        <img src="./assets/img/alertifyBanner.png" id="alertBan">
-    
+  <div class="container z-depth-4 teal lighten-5">
+    <!-- Header/Banner -->
+      <img src="./assets/img/alertifyBanner.png" id="alertBan">
         <nav>
             <div class="nav-wrapper teal lighten-2 z-depth-1">
               <!-- Our Navbar -->
               <ul class="left">
                 <li><a href="index.html">
                   <i class="material-icons prefix">home</i></a></li>
-                <li class="hide"><a href="login.html">Login</a></li>
-                <li class="hide"><a href="members.html">My Account</a></li>
-                <li class="hide"><a href="/logout">Logout</a></li>
-                <li><a href="tracker.html">Tracker</a></li>
-                <li class="active"><a href="signUp.html">Sign Up</a></li>
+                <li><a class="navbar-brand" href="/logout">Logout</a></li>
+                <li class="active"><a href="tracker.html">Tracker</a></li>
               </ul>
               <!-- End Nav -->
           </nav>
@@ -45,19 +41,34 @@
         
               <!--   Main Body About Alertify   -->
               <div class="row">
-                <!-- Adding Google Maps -->
-                <div id="embedMap" class="center">
-                <!--Google map will be embedded here-->
+                <div class="card-panel l3 s12 center-block">
+                    <h5 class="center">FAQ</h5>
+                    <ul class="collapsible popout">
+                        <li>
+                          <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>
+                            How do I change my password?
+                          </div>
+                          <div class="collapsible-body"><span>Go to my account, click update password.</span></div>
+                        </li>
+                        <li>
+                          <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>
+                            How do I change my emergency contacts?
+                          </div>
+                          <div class="collapsible-body"><span>Go to my account, click on contacts, update contacts.</span></div>
+                        </li>
+                        <li>
+                          <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>
+                            How do I contact Alertify?
+                          </div>
+                          <div class="collapsible-body">
+                              <span>At the bottom of the page, you should see <a href="./formMail.html">email</a> and <a href="./phone.html">phone</a> as options.</span>
+                          </div>
+                        </li>
+                      </ul>
                 </div>
-                <br>
-                    <div class="center">
-                      <a href="#">
-                        <img src="./assets/img/alertifyLogo.png" id="tracking" height="200px"></a>
-                        <h5>Click To Alertify</h5>
-                    </div>
-              </div>
+                </div>
             </div>
-          </div>
+        </div>
 
   <!-- Footer -->
 <footer class="page-footer teal">
@@ -97,26 +108,8 @@
 </footer>
 </div>
 
+
+<script type="text/javascript" src="./assets/js/members.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-<script>
-  const successCallback = (position) => {
-    var lat = position.coords.latitude;
-    var long = position.coords.longitude;
-    var apiKey = "AIzaSyBos6JoNIqsI5Qz1VH0TsonjPQw4fp4zb0";
-    var location = "https://www.google.com/maps/embed/v1/search?key=" + apiKey + "&q=" + lat +"," + long + "&zoom=17&maptype=satellite";
-    $("#embedMap").html(`<iframe width="600" height="450" frameborder="0" style="border:0" src=' ${location} '"allowfullscreen"</iframe>`);
-  };
-
-  const errorCallback = (position) => {
-    console.error(error);
-  };
-
-  const watchId = navigator.geolocation.watchPosition(successCallback, errorCallback);
-  //if button is pressed to be safe
-  //navigator.geolocation.clearWatch(watchId);
-</script>
-
-<!-- Javascript file for hooking up Quick Easy SMS -->
-<script src="./assets/js/sendText.js"></script>
 </body>
 </html>
