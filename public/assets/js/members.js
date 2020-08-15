@@ -9,9 +9,11 @@ $(document).ready(function() {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-  var elem = document.querySelector(".collapsible.popout");
-  var instance = M.Collapsible.init(elem, {
-    accordion: false
-  });
-});
+//Commenting out code below until variables can be used because it is causing Travis tests to fail - Tiana
+
+// document.addEventListener("DOMContentLoaded", function() {
+//   var elem = document.querySelector(".collapsible.popout");
+//   var instance = M.Collapsible.init(elem, {
+//     accordion: false
+//   });
+// });
