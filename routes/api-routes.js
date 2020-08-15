@@ -10,9 +10,17 @@ module.exports = function (app) {
     res.json(req.user);
   });
 
-  app.put("/api/user_data", passport.authenticate("local"), function (req, res) {
-    req.password = req.newPassword;
-    res.json(req.user);
+  app.put("/api/user_data", passport.authenticate("local"), async function (req, res) {
+    console.log(req.body);
+    console.log(req.user.id)
+    const user = await db.User.findOne({
+      where: {
+        id: req.user.id
+      }
+    });
+
+    await user.changePassword(req.body.newPassword);
+    res.status(200).send('Password updated');
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to

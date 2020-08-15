@@ -15,13 +15,17 @@ $(document).ready(function () {
 $(".submit-button").on("click", function (event) {
   $.get("/api/user_data").then(function (data) {
     event.preventDefault();
-    $.put("/api/user_data", {
-      firstName: data.firstName,
-      lastName: data.lastName,
-      username: data.username,
-      email: data.email,
-      password: $("#passwordUpdateCurrent")[0].value,
-      newPassword: $("#passwordUpdateNew")[0].value
+    $.ajax({
+      url: "/api/user_data",
+      type: "PUT",
+      data: {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        username: data.username,
+        email: data.email,
+        password: $("#passwordUpdateCurrent")[0].value,
+        newPassword: $("#passwordUpdateNew")[0].value,
+      }
     });
   });
 });
@@ -29,6 +33,6 @@ $(".submit-button").on("click", function (event) {
 document.addEventListener("DOMContentLoaded", function () {
   var elem = document.querySelector(".collapsible.popout");
   M.Collapsible.init(elem, {
-    accordion: false
+    accordion: false,
   });
 });
