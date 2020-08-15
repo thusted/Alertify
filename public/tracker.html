@@ -55,6 +55,9 @@
                         <img src="./assets/img/alertifyLogo.png" id="tracking" height="200px"></a>
                         <h5>Click To Alertify</h5>
                     </div>
+                    <div class="center">
+                      
+                    </div>
               </div>
             </div>
           </div>
@@ -98,23 +101,6 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-<script>
-  const successCallback = (position) => {
-    var lat = position.coords.latitude;
-    var long = position.coords.longitude;
-    var apiKey = "AIzaSyBos6JoNIqsI5Qz1VH0TsonjPQw4fp4zb0";
-    var location = "https://www.google.com/maps/embed/v1/search?key=" + apiKey + "&q=" + lat +"," + long + "&zoom=17&maptype=satellite";
-    $("#embedMap").html(`<iframe width="600" height="450" frameborder="0" style="border:0" src=' ${location} '"allowfullscreen"</iframe>`);
-  };
-
-  const errorCallback = (position) => {
-    console.error(error);
-  };
-
-  const watchId = navigator.geolocation.watchPosition(successCallback, errorCallback);
-  //if button is pressed to be safe
-  //navigator.geolocation.clearWatch(watchId);
-</script>
 
 <!-- Javascript file for hooking up Quick Easy SMS -->
 <script src="./assets/js/sendText.js"></script>
