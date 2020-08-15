@@ -9,14 +9,16 @@ $(document).ready(function () {
     }
     $(".userEmail").text(data.email);
     $(".userPassword").text(data.password);
-    console.log("password", data.password)
   });
 });
 
 $(".submit-button").on("click", function (event) {
   $.get("/api/user_data").then(function (data) {
     event.preventDefault();
-    $.patch("/api/user_data", {
+    $.put("/api/user_data", {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      username: data.username,
       email: data.email,
       password: $("#passwordUpdateCurrent")[0].value,
       newPassword: $("#passwordUpdateNew")[0].value

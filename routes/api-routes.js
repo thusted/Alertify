@@ -10,7 +10,7 @@ module.exports = function (app) {
     res.json(req.user);
   });
 
-  app.patch("/api/user_data", passport.authenticate("local"), function (req, res) {
+  app.put("/api/user_data", passport.authenticate("local"), function (req, res) {
     req.password = req.newPassword;
     res.json(req.user);
   });
