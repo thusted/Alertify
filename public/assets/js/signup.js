@@ -23,7 +23,6 @@ $(document).ready(function () {
       password: password,
     })
       .then(function() {
-        alert("Successfully Signed in");
         window.location.replace("/members");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
