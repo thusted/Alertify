@@ -16,7 +16,7 @@ $(document).ready(function () {
 $(".submit-button").on("click", function (event) {
   $.get("/api/user_data").then(function (data) {
     event.preventDefault();
-    $.patch("/api/login", {
+    $.patch("/api/user_data", {
       email: data.email,
       password: $("#passwordUpdateCurrent")[0].value,
       newPassword: $("#passwordUpdateNew")[0].value
