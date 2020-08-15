@@ -9,9 +9,9 @@ $(document).ready(function() {
   });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  var elem = document.querySelector('.collapsible.popout');
+document.addEventListener("DOMContentLoaded", function() {
+  var elem = document.querySelector(".collapsible.popout");
   var instance = M.Collapsible.init(elem, {
-  accordion: false
-});
+    accordion: false
+  });
 });
