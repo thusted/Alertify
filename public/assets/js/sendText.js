@@ -8,13 +8,13 @@ const settings = {
   "method": "POST",
   "headers": {
     "x-rapidapi-host": "quick-easy-sms.p.rapidapi.com",
-    "x-rapidapi-key": "c6d2fd8de1msh1a5e58f307fe5ecp142cf4jsn5869616bb771",
+    "x-rapidapi-key": "488cc413bcmsh911fc91c6567527p14c007jsn8fd4a3210f09",
     "content-type": "application/x-www-form-urlencoded"
   },
   "data": {
     "callbackURL": "https://example.com/abcd",
     "message": "User has initiated tracking on Alertify.",
-    "toNumber": "1xxxxxxx" //Number goes here
+    "toNumber": "19714041043"
   }
 };
 
@@ -26,13 +26,13 @@ const settings2 = {
   "method": "POST",
   "headers": {
     "x-rapidapi-host": "quick-easy-sms.p.rapidapi.com",
-    "x-rapidapi-key": "c6d2fd8de1msh1a5e58f307fe5ecp142cf4jsn5869616bb771",
+    "x-rapidapi-key": "488cc413bcmsh911fc91c6567527p14c007jsn8fd4a3210f09",
     "content-type": "application/x-www-form-urlencoded"
   },
   "data": {
     "callbackURL": "https://example.com/abcd",
     "message": "User has initiated tracking on Alertify.",
-    "toNumber": "1xxxxxxx" //Number goes here
+    "toNumber": "19714041043"
   }
 };
 
@@ -44,13 +44,13 @@ const settings3 = {
   "method": "POST",
   "headers": {
     "x-rapidapi-host": "quick-easy-sms.p.rapidapi.com",
-    "x-rapidapi-key": "c6d2fd8de1msh1a5e58f307fe5ecp142cf4jsn5869616bb771",
+    "x-rapidapi-key": "488cc413bcmsh911fc91c6567527p14c007jsn8fd4a3210f09",
     "content-type": "application/x-www-form-urlencoded"
   },
   "data": {
     "callbackURL": "https://example.com/abcd",
     "message": "User has initiated tracking on Alertify.",
-    "toNumber": "1xxxxxxx" //Number goes here
+    "toNumber": "19714041043"
   }
 };
 
