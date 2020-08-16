@@ -7,6 +7,9 @@ $(document).ready(function () {
     } else {
       $(".username").text(data.username);
     }
+  $.get("/api/login").then(function(data) {
+    console.log(data);
+    $(".username").text(data.username);
     $(".userEmail").text(data.email);
     $(".userPassword").text(data.password);
   });
@@ -29,6 +32,7 @@ $(".submit-button").on("click", function (event) {
     });
   });
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
   var elem = document.querySelector(".collapsible.popout");
