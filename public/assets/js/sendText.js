@@ -2,9 +2,9 @@
 const successCallback = (position) => {
   const lat = position.coords.latitude;
   const long = position.coords.longitude;
-  // const apiKey = "AIzaSyBos6JoNIqsI5Qz1VH0TsonjPQw4fp4zb0";
-  // const location = "https://www.google.com/maps/embed/v1/search?key=" + apiKey + "&q=" + lat +"," + long + "&zoom=17&maptype=satellite";
-  // $("#embedMap").html(`<iframe width="600" height="450" frameborder="0" style="border:0" src=' ${location} '"allowfullscreen"</iframe>`);
+  const apiKey = "AIzaSyBos6JoNIqsI5Qz1VH0TsonjPQw4fp4zb0";
+  const location = "https://www.google.com/maps/embed/v1/search?key=" + apiKey + "&q=" + lat +"," + long + "&zoom=17&maptype=satellite";
+  $("#embedMap").html(`<iframe width="600" height="450" frameborder="0" style="border:0" src=' ${location} '"allowfullscreen"</iframe>`);
   const textLocationURL = "http://maps.google.com/?q=" + lat + "," + long;
 
   //Settings for Quick Easy SMS API
@@ -59,6 +59,7 @@ const successCallback = (position) => {
       "toNumber": "1XXXXXXXXXX"
     }
   };
+  
   //Function to make AJAX calls that send text message
   function sendText() {
     //Nesting AJAX calls because Quick Easy SMS does not allow users to send the same message to multiple numbers at the same time
@@ -90,11 +91,10 @@ const successCallback = (position) => {
 const errorCallback = (error) => {
   console.error(error);
 };
+
 //we will come back to watchId later when "I'm ok" button is created
 // const watchId =
 navigator.geolocation.watchPosition(successCallback, errorCallback);
 //if button is pressed to be safe
 //navigator.geolocation.clearWatch(watchId);
-
-
 

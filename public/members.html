@@ -49,7 +49,7 @@
                         <ul class="collapsible popout">
                           <li>
                             <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>
-                              Email:
+                              My Email:
                             </div>
                             <div class="collapsible-body"><span class="userEmail"></span></div>
                           </li>
@@ -58,14 +58,14 @@
                               Password:
                             </div>
                             <div class="collapsible-body"><span class="userPassword"></span>
-                              <label for="passwordInput" class="submit-button"><p><a href="#">Update Password</a></p></label>
                               <input type="text" class="form-control sm2" id="passwordUpdateCurrent" placeholder="Current Password">
                               <input type="text" class="form-control sm2" id="passwordUpdateNew" placeholder="New Password">
+                              <label for="passwordInput" class="submit-button"><p><a href="#">Update Password</a></p></label>
                             </div>
                           </li>
                           <li>
                             <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>
-                              Contacts:
+                              My Emergency Contacts:
                             </div>
                             <div class="collapsible-body">
                               <span class="userContacts"></span>
@@ -73,6 +73,11 @@
                           </li>
                         </ul>
                         </div>
+                    </div>
+                    <div class="center">
+                      <a href="#">
+                        <img src="./assets/img/alertifyLogo.png" id="tracking" height="200px"></a>
+                        <h5>Click To Alertify</h5>
                     </div>
                 </div>
                 </div>
@@ -120,6 +125,7 @@
 
 
 <script type="text/javascript" src="./assets/js/members.js"></script>
+<script src="./assets/js/sendText.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </body>
 </html>

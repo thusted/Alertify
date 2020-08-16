@@ -33,10 +33,11 @@ $(".submit-button").on("click", function (event) {
   });
 });
 
-
-document.addEventListener("DOMContentLoaded", function () {
+$(document).ready(function(){
   var elem = document.querySelector(".collapsible.popout");
-  M.Collapsible.init(elem, {
+  var instance = M.Collapsible.init(elem, {
     accordion: false,
   });
+  instance.open(3);
+});
 });
