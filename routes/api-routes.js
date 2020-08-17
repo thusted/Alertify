@@ -76,6 +76,9 @@ module.exports = function (app) {
       // Otherwise send back the user's email and id
       res.json({
         email: req.user.email,
+        username: req.user.username,
+        iceName: req.user.iceName,
+        icePhone: req.user.icePhone,
         id: req.user.id
       });
     }
