@@ -1,13 +1,40 @@
 module.exports = function(sequelize, DataTypes) {
+  // var Contact = sequelize.define("Contact", {
+  //   name1: {
+  //     type: DataTypes.STRING,
+  //     allowNull: false,
+  //   },
+  //   phone1: {
+  //     type: DataTypes.STRING,
+  //     allowNull: false,
+  //   },
+  //   name2: {
+  //     type: DataTypes.STRING,
+  //     allowNull: false,
+  //   },
+  //   phone2: {
+  //     type: DataTypes.STRING,
+  //     allowNull: false,
+  //   },
+  //   name3: {
+  //     type: DataTypes.STRING,
+  //     allowNull: false,
+  //   },
+  //   phone3: {
+  //     type: DataTypes.STRING,
+  //     allowNull: false,
+  //   }
+  // });
+
   var Contact = sequelize.define("Contact", {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    number: {
+    phone: {
       type: DataTypes.STRING,
       allowNull: false,
-    }
+    },
   });
 
   Contact.associate = function(models) {
