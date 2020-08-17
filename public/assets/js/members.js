@@ -13,7 +13,7 @@ $(document).ready(function () {
     $(".userPassword").text(data.password);
     $(".userIceName").text("Name: " + data.iceName);
     $(".userIcePhone").text("Number: " + data.icePhone);
-    // $(".userIceName").text(`${data.iceName}:${data.icePhone}`); 
+    // $(".userIceName").text(`${data.iceName}:${data.icePhone}`);
     // if (data.username === null) {
     //   $(".username").text(data.email.substring(0, data.email.lastIndexOf("@")));
     // } else {

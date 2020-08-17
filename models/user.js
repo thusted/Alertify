@@ -54,7 +54,18 @@ module.exports = function(sequelize, DataTypes) {
         id: this.id
       }
     });
-  }
+  };
+
+  User.prototype.changeContact = async function(iceName,icePhone,id){
+    return await User.update({
+      iceName:iceName,
+      icePhone:icePhone
+    }, {
+      where: {
+        id:id
+      }
+    });
+  };
 
   // User.prototype.changeContact = async function(){
   //   const newIceName = data.iceName;
