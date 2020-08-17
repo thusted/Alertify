@@ -12,7 +12,7 @@ module.exports = function (app) {
 
   app.put("/api/user_data", passport.authenticate("local"), async function (req, res) {
     console.log(req.body);
-    console.log(req.user.id)
+    console.log(req.user.id);
     const user = await db.User.findOne({
       where: {
         id: req.user.id
@@ -21,6 +21,19 @@ module.exports = function (app) {
 
     await user.changePassword(req.body.newPassword);
     res.status(200).send("Password updated");
+  });
+
+  // PUT route for updating contacts. We can get the updated contact data from req.body
+  app.put("/api/user_data/:iceName", async function(req, res) {
+    // Update takes in an object describing the properties we want to update, and
+    // we use where to describe which objects we want to update
+    const user = await db.User.findOne({
+      where: {
+        id: req.user.id
+      }
+    });
+    await user.changeContact(req.body.iceName,req.body.icePhone,req.user.id);
+    res.status(200).send("Contact updated");
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -43,22 +56,6 @@ module.exports = function (app) {
         console.log(err);
         res.status(401).json(err);
       });
-  });
-
-  // PUT route for updating contacts. We can get the updated contact data from req.body
-  app.put("/api/user_data/:iceName", function(req, res) {
-    // Update takes in an object describing the properties we want to update, and
-    // we use where to describe which objects we want to update
-    db.User.update({
-      iceName: req.user.iceName,
-      icePhone: req.user.icePhone
-    }, {
-      where: {
-        id: req.body.id
-      }
-    }).then(function(dbUser) {
-      res.json(dbUser);
-    });
   });
 
   // Route for logging user out

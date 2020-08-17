@@ -1,5 +1,5 @@
-var elem = document.querySelector('.collapsible.popout');
-var instance = M.Collapsible.init(elem, {
+var elem = document.querySelector(".collapsible.popout");
+M.Collapsible.init(elem, {
   accordion: false
 });
 
@@ -12,7 +12,7 @@ $(document).ready(function () {
     $(".userEmail").text(data.email);
     $(".userIceName").text("Name: " + data.iceName);
     $(".userIcePhone").text("Number: " + data.icePhone);
-    // $(".userIceName").text(`${data.iceName}:${data.icePhone}`); 
+    // $(".userIceName").text(`${data.iceName}:${data.icePhone}`);
     // if (data.username === null) {
     //   $(".username").text(data.email.substring(0, data.email.lastIndexOf("@")));
     // } else {
@@ -56,5 +56,5 @@ $(document).ready(function () {
         }
       });
     });
-});
+  });
 });
