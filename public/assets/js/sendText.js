@@ -21,7 +21,7 @@ $(document).ready(function() {
         "method": "POST",
         "headers": {
           "x-rapidapi-host": "quick-easy-sms.p.rapidapi.com",
-          "x-rapidapi-key": "ae69d309ecmsh7601b0dc1024f91p14c818jsna474d06d8cc8",
+          "x-rapidapi-key": "5c94c28007msh0615efba39b7f77p1b2c08jsn6e1b5041f5ae",
           "content-type": "application/x-www-form-urlencoded"
         },
         "data": {
@@ -38,12 +38,12 @@ $(document).ready(function() {
         });
       }
 
-      //Start sending messages to User's emergency contacts every minute until "I'm Okay" button is pressed
+      // // Start sending messages to User's emergency contacts every minute until "I'm Okay" button is pressed
       function continuousText() {
         sendText();
         setTimeout(function() {
           continuousText();
-        }, 120000);
+        }, 30000);
       }
 
       //Hitting the "Alertify" button will call our continuousText function
@@ -56,10 +56,10 @@ $(document).ready(function() {
         window.location.replace("./tracker.html");
       });
 
-      // $("#ok").on("click", function() {
-      //   clearTimeout(continuousText());
-      //   console.log("You pressed me");
-      // });
+      $("#ok").on("click", function() {
+        clearTimeout(continuousText());
+        console.log("You pressed me");
+      });
     };
 
     //Geolocation Error Catch

@@ -41,7 +41,7 @@ $(document).ready(function () {
   });
 
   $(".contact-button").on("click", function (event) {
-    $.get("/api/user_data").then(function (data) {
+    $.get("/api/user_data/:iceName").then(function (data) {
       event.preventDefault();
       $.ajax({
         url: "/api/user_data",

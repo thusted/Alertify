@@ -46,7 +46,7 @@ module.exports = function (app) {
   });
 
   // PUT route for updating contacts. We can get the updated contact data from req.body
-  app.put("/api/user_data", function(req, res) {
+  app.put("/api/user_data/:iceName", function(req, res) {
     // Update takes in an object describing the properties we want to update, and
     // we use where to describe which objects we want to update
     db.User.update({
