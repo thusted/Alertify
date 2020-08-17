@@ -8,6 +8,7 @@ $(document).ready(function () {
   // and updates the HTML on the page
   $.get("/api/user_data").then(function (data) {
     console.log(data);
+    $(".username").text(data.username);
     $(".userEmail").text(data.email);
     $(".userPassword").text(data.password);
     $(".userIceName").text("Name: " + data.iceName);
