@@ -25,6 +25,14 @@ module.exports = function(sequelize, DataTypes) {
         isEmail: true
       }
     },
+    iceName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    icePhone: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     // The password cannot be null
     password: {
       type: DataTypes.STRING,
