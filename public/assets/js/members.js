@@ -7,19 +7,17 @@ $(document).ready(function () {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
   $.get("/api/user_data").then(function (data) {
-    if (data.username === null) {
-      $(".username").text(data.email.substring(0, data.email.lastIndexOf("@")));
-    } else {
-      $(".username").text(data.username);
-    };
-  });
-
-  $.get("/api/login").then(function(data) {
     console.log(data);
-    $(".username").text(data.username);
     $(".userEmail").text(data.email);
     $(".userPassword").text(data.password);
-    $(".userContacts").text(`${data.iceName}:${data.icePhone}`);
+    $(".userIceName").text("Name: " + data.iceName);
+    $(".userIcePhone").text("Number: " + data.icePhone);
+    // $(".userIceName").text(`${data.iceName}:${data.icePhone}`); 
+    // if (data.username === null) {
+    //   $(".username").text(data.email.substring(0, data.email.lastIndexOf("@")));
+    // } else {
+    //   $(".username").text(data.username);
+    // };
   });
 
   $(".submit-button").on("click", function (event) {
@@ -59,5 +57,4 @@ $(document).ready(function () {
       });
     });
 });
-  
 });
