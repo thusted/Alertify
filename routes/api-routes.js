@@ -20,7 +20,7 @@ module.exports = function (app) {
     });
 
     await user.changePassword(req.body.newPassword);
-    res.status(200).send('Password updated');
+    res.status(200).send("Password updated");
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -49,15 +49,15 @@ module.exports = function (app) {
   app.put("/api/user_data", function(req, res) {
     // Update takes in an object describing the properties we want to update, and
     // we use where to describe which objects we want to update
-    db.Todo.update({
+    db.User.update({
       iceName: req.user.iceName,
       icePhone: req.user.icePhone
     }, {
       where: {
         id: req.body.id
       }
-    }).then(function(dbTodo) {
-      res.json(dbTodo);
+    }).then(function(dbUser) {
+      res.json(dbUser);
     });
   });
 

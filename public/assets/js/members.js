@@ -10,7 +10,6 @@ $(document).ready(function () {
     console.log(data);
     $(".username").text(data.username);
     $(".userEmail").text(data.email);
-    $(".userPassword").text(data.password);
     $(".userIceName").text("Name: " + data.iceName);
     $(".userIcePhone").text("Number: " + data.icePhone);
     // $(".userIceName").text(`${data.iceName}:${data.icePhone}`); 
