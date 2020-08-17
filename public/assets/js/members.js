@@ -42,18 +42,24 @@ $(document).ready(function () {
   });
 
   $(".contact-button").on("click", function (event) {
-    $.get("/api/user_data").then(function (data) {
+    $.get("/api/user_data/").then(function (data) {
       event.preventDefault();
       $.ajax({
-        url: "/api/user_data",
+        url: "/api/user_data/:iceName",
         type: "PUT",
-        data: {
+        contentType: "application/json",
+        data: JSON.stringify({
+          id: data.id,
           firstName: data.firstName,
           lastName: data.lastName,
           username: data.username,
           email: data.email,
           iceName: $("#contactUpdateName")[0].value,
           icePhone: $("#contactUpdateNumber")[0].value,
+        }),
+        dataType: 'json',
+        error: function (data) {
+          console.log(data)
         }
       });
     });
