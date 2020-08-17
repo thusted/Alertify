@@ -6,12 +6,9 @@ $(document).ready(function () {
   var firstName = $("input#first_name");
   var lastName = $("input#last_name");
   var username = $("input#username");
-  var icename1 = $("input#icename1");
-  var icename2 = $("input#icename2");
-  var icename3 = $("input#icename3");
-  var icephone1 = $("input#icephone1");
-  var icephone2 = $("input#icephone2");
-  var icephone3 = $("input#icephone3");
+  var iceName = $("input#iceName");
+  var icePhone = $("input#icePhone");
+
 
   function handleLoginErr(err) {
     $("#alert .msg").text(err.responseJSON);
@@ -20,19 +17,15 @@ $(document).ready(function () {
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  function signUpUser(firstName, lastName, username, email, password, icename1, icephone1, icename2, icephone2, icename3, icephone3) {
+  function signUpUser(firstName, lastName, username, email, password, iceName, icePhone) {
     $.post("/api/signup", {
       firstName: firstName,
       lastName: lastName,
       username: username,
       email: email,
       password: password,
-      icename1: icename1,
-      icephone1: icephone1,
-      icename2: icename2,
-      icephone2: icephone2,
-      icename3: icename3,
-      icephone3: icephone3
+      iceName: iceName,
+      icePhone: icePhone,
     })
       .then(function() {
         window.location.replace("/members");
@@ -50,12 +43,8 @@ $(document).ready(function () {
       username: username.val().trim(),
       email: emailInput.val().trim(),
       password: passwordInput.val(),
-      icename1: icename1.val().trim(),
-      icephone1: icephone1.val().trim(),
-      icename2: icename2.val().trim(),
-      icephone2: icephone2.val().trim(),
-      icename3: icename3.val().trim(),
-      icephone3: icephone3.val().trim(),
+      iceName: iceName.val().trim(),
+      icePhone: icePhone.val().trim()
     };
 
     console.log(userData);
@@ -67,12 +56,8 @@ $(document).ready(function () {
       userData.username,
       userData.email,
       userData.password,
-      userData.icename1,
-      userData.icephone1,
-      userData.icename2,
-      userData.icephone2,
-      userData.icename3,
-      userData.icephone3
+      userData.iceName,
+      userData.icePhone
     );
 
     firstName.val("");
@@ -80,11 +65,7 @@ $(document).ready(function () {
     username.val("");
     emailInput.val("");
     passwordInput.val("");
-    icename1.val("");
-    icephone1.val("");
-    icename2.val("");
-    icephone2.val("");
-    icename3.val("");
-    icephone3.val("");
+    iceName.val("");
+    icePhone.val("");
   });
 });
