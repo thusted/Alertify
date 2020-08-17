@@ -32,7 +32,9 @@ module.exports = function (app) {
       lastName: req.body.lastName,
       username: req.body.username,
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      iceName: req.body.iceName,
+      icePhone: req.body.icePhone,
     })
       .then(function () {
         res.redirect(307, "/api/login");
@@ -43,32 +45,32 @@ module.exports = function (app) {
       });
   });
 
-  app.post("/api/contacts", function (req, res) {
-    $.get("/api/user_data").then(function (data) {
-    db.Contact.create({
-      name: req.body.icename1,
-      phone: req.body.icephone1,
-      UserId: data.id
-    })
-    db.Contact.create({
-      name: req.body.icename2,
-      phone: req.body.icephone2,
-      UserId: data.id
-    })
-    db.Contact.create({
-      name: req.body.icename3,
-      phone: req.body.icephone3,
-      UserId: data.id
-    })
-  }) 
-      .then(function () {
-        res.redirect(307, "/api/members");
-      })
-      .catch(function (err) {
-        console.log(err);
-        res.status(401).json(err);
-      });
-  });
+  // app.post("/api/contacts", function (req, res) {
+  //   $.get("/api/user_data").then(function (data) {
+  //   db.Contact.create({
+  //     name: req.body.icename1,
+  //     phone: req.body.icephone1,
+  //     UserId: data.id
+  //   })
+  //   db.Contact.create({
+  //     name: req.body.icename2,
+  //     phone: req.body.icephone2,
+  //     UserId: data.id
+  //   })
+  //   db.Contact.create({
+  //     name: req.body.icename3,
+  //     phone: req.body.icephone3,
+  //     UserId: data.id
+  //   })
+  // }) 
+  //     .then(function () {
+  //       res.redirect(307, "/api/members");
+  //     })
+  //     .catch(function (err) {
+  //       console.log(err);
+  //       res.status(401).json(err);
+  //     });
+  // });
 
   // app.get("/api/user_data", function (req, res) {
   //   if (req.body.icename1 && req.body.icephone1) {
