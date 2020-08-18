@@ -1,5 +1,5 @@
-var elem = document.querySelector('.collapsible.popout');
-var instance = M.Collapsible.init(elem, {
+var elem = document.querySelector(".collapsible.popout");
+M.Collapsible.init(elem, {
   accordion: false
 });
 
@@ -13,7 +13,7 @@ $(document).ready(function () {
     $(".userPassword").text(data.password);
     $(".userIceName").text("Name: " + data.iceName);
     $(".userIcePhone").text("Number: " + data.icePhone);
-    // $(".userIceName").text(`${data.iceName}:${data.icePhone}`); 
+    // $(".userIceName").text(`${data.iceName}:${data.icePhone}`);
     // if (data.username === null) {
     //   $(".username").text(data.email.substring(0, data.email.lastIndexOf("@")));
     // } else {
@@ -57,11 +57,11 @@ $(document).ready(function () {
           iceName: $("#contactUpdateName")[0].value,
           icePhone: $("#contactUpdateNumber")[0].value,
         }),
-        dataType: 'json',
+        dataType: "json",
         error: function (data) {
-          console.log(data)
+          console.log(data);
         }
       });
     });
-});
+  });
 });
