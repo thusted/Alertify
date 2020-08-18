@@ -14,22 +14,22 @@ $(document).ready(function() {
       const textLocationURL = "http://maps.google.com/?q=" + lat + "," + long;
 
       //Settings for Quick Easy SMS API
-      const settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://quick-easy-sms.p.rapidapi.com/send",
-        "method": "POST",
-        "headers": {
-          "x-rapidapi-host": "quick-easy-sms.p.rapidapi.com",
-          "x-rapidapi-key": process.env.RAPID_API_KEY,
-          "content-type": "application/x-www-form-urlencoded"
-        },
-        "data": {
-          "callbackURL": "https://example.com/abcd",
-          "message": username + " has shared their location on Alertify. Click here to find their current location: " + textLocationURL,
-          "toNumber": "1" + icePhone //User's emergency contact
-        }
-      };
+      // const settings = {
+      //   "async": true,
+      //   "crossDomain": true,
+      //   "url": "https://quick-easy-sms.p.rapidapi.com/send",
+      //   "method": "POST",
+      //   "headers": {
+      //     "x-rapidapi-host": "quick-easy-sms.p.rapidapi.com",
+      //     "x-rapidapi-key": process.env.RAPID_API_KEY,
+      //     "content-type": "application/x-www-form-urlencoded"
+      //   },
+      //   "data": {
+      //     "callbackURL": "https://example.com/abcd",
+      //     "message": username + " has shared their location on Alertify. Click here to find their current location: " + textLocationURL,
+      //     "toNumber": "1" + icePhone //User's emergency contact
+      //   }
+      // };
 
       const settings2 = {
         "url": "/api/text",
