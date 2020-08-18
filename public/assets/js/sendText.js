@@ -21,7 +21,7 @@ $(document).ready(function() {
         "method": "POST",
         "headers": {
           "x-rapidapi-host": "quick-easy-sms.p.rapidapi.com",
-          "x-rapidapi-key": RAPID_API_KEY,
+          "x-rapidapi-key": process.env.RAPID_API_KEY,
           "content-type": "application/x-www-form-urlencoded"
         },
         "data": {
