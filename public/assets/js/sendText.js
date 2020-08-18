@@ -31,9 +31,18 @@ $(document).ready(function() {
         }
       };
 
+      const settings2 = {
+        "url": "/api/text",
+        "method": "POST",
+        "data": {
+          "message": username + " has shared their location on Alertify. Click here to find their current location: " + textLocationURL,
+          "toNumber": "1" + icePhone //User's emergency contact
+        }
+      }
+
       //Function to make AJAX calls that send text message
       function sendText() {
-        $.ajax(settings).done(function(response) {
+        $.ajax(settings2).done(function(response) {
           console.log(response);
         });
       }
@@ -41,9 +50,9 @@ $(document).ready(function() {
       // // Start sending messages to User's emergency contacts every minute until "I'm Okay" button is pressed
       function continuousText() {
         sendText();
-        setTimeout(function() {
-          continuousText();
-        }, 30000);
+        // setTimeout(function() {
+        //   continuousText();
+        // }, 30000);
       }
 
       //Hitting the "Alertify" button will call our continuousText function

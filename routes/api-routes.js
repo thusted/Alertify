@@ -1,11 +1,43 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
+const axios = require('axios');
 var passport = require("../config/passport");
 
 module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
+
+
+
+  app.post('/api/text', function (req, res) {
+    const {toNumber, message} = req.body;
+
+    var request = require("request");
+
+    var options = {
+      method: 'POST',
+      url: 'https://quick-easy-sms.p.rapidapi.com/send',
+      headers: {
+        "x-rapidapi-host":"quick-easy-sms.p.rapidapi.com",
+        "x-rapidapi-key": process.env.RAPID_API_KEY,
+        'content-type': 'application/x-www-form-urlencoded',
+        useQueryString: true
+      },
+      form: {message: message, toNumber: toNumber}
+    };
+
+
+    request(options, function (error, response, body) {
+      if (error){
+        console.error('error sending text is: ', error);
+        res.status(500).end('error is: ', error.message)
+      }
+      console.log('text successfully send')
+      res.json('Successfully Send the message!')
+    });
+});
+
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
     res.json(req.user);
   });
@@ -93,4 +125,8 @@ module.exports = function (app) {
       });
     }
   });
+
+  // route for text api
+
+
 };
