@@ -76,7 +76,7 @@ module.exports = function(sequelize, DataTypes) {
         id:id
       }
     });
-  }
+  };
 
   // User.prototype.changeContact = async function(){
   //   const newIceName = data.iceName;

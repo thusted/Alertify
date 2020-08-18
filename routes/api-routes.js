@@ -18,7 +18,7 @@ module.exports = function (app) {
         id: req.user.id
       }
     });
-    
+
     await user.changePassword(req.body.newPassword);
     res.status(200).send("Password updated");
   });
@@ -46,7 +46,7 @@ module.exports = function (app) {
       }
     });
     await user.changeContact(req.body.iceName,req.body.icePhone,req.user.id);
-    res.status(200).send('Contact updated');
+    res.status(200).send("Contact updated");
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -63,7 +63,7 @@ module.exports = function (app) {
       icePhone: req.body.icePhone,
     })
       .then(function () {
-        res.redirect(307, "/api/login");m
+        res.redirect(307, "/api/login");
       })
       .catch(function (err) {
         console.log(err);
