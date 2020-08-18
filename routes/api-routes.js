@@ -20,12 +20,13 @@ module.exports = function (app) {
       url: 'https://quick-easy-sms.p.rapidapi.com/send',
       headers: {
         "x-rapidapi-host":"quick-easy-sms.p.rapidapi.com",
-        "x-rapidapi-key":"271dda3555msh14f31a8dcfc9e4fp17db81jsnbde7ef7d84f3",
+        "x-rapidapi-key": process.env.RAPID_API_KEY,
         'content-type': 'application/x-www-form-urlencoded',
         useQueryString: true
       },
       form: {message: message, toNumber: toNumber}
     };
+
 
     request(options, function (error, response, body) {
       if (error){
