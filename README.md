@@ -5,7 +5,7 @@ This application can provide users with additional security in case of an emerge
 
 ### Technologies Used
 
-* Following templates used:
+* Following languages used:
 
   * `HTML`
 
