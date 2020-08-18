@@ -28,7 +28,7 @@ FrontEnd:
 
 
 BackEnd:
-  * Echo VanRyn-Gregg
+  * Echo VanRyn
   * Tiana Husted
   * Mark Kelly
   * Kai Taylor
