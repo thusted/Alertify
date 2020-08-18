@@ -27,7 +27,15 @@ module.exports = function (app) {
       form: {message: message, toNumber: toNumber}
     };
 
-
+// let tries = 0
+//intervalId = setInterval(
+  //tries ++
+  // if(tries > 10){
+  //   clearInterval(intervalId)
+  // }
+  //request(options, function(err, res, body){}),
+  //  100000)
+  // )
     request(options, function (error, response, body) {
       if (error){
         console.error('error sending text is: ', error);
