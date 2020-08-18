@@ -12,13 +12,11 @@ $(document).ready(function () {
     $(".userEmail").text(data.email);
     $(".userPassword").text(data.password);
     $(".userIceName").text("Name: " + data.iceName);
-    $(".userIcePhone").text("Number: " + data.icePhone);
-    // $(".userIceName").text(`${data.iceName}:${data.icePhone}`);
-    // if (data.username === null) {
-    //   $(".username").text(data.email.substring(0, data.email.lastIndexOf("@")));
-    // } else {
-    //   $(".username").text(data.username);
-    // };
+    var a = data.icePhone;
+    var b = [a.slice(0, 0), "(", a.slice(0)].join("");
+    var c = [b.slice(0, 4), ")", b.slice(4)].join("");
+    var phone = [c.slice(0, 8), "-", c.slice(8)].join("");
+    $(".userIcePhone").text("Number: " + phone);
   });
 
   $(".submit-button").on("click", function (event) {
