@@ -1,6 +1,6 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
-const axios = require('axios');
+const axios = require("axios");
 var passport = require("../config/passport");
 
 module.exports = function (app) {
@@ -8,55 +8,56 @@ module.exports = function (app) {
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
 
-
-
-  app.post('/api/text', function (req, res) {
-    const {toNumber, message} = req.body;
+  app.post("/api/text", function (req, res) {
+    const { toNumber, message } = req.body;
 
     var request = require("request");
 
     var options = {
-      method: 'POST',
-      url: 'https://quick-easy-sms.p.rapidapi.com/send',
+      method: "POST",
+      url: "https://quick-easy-sms.p.rapidapi.com/send",
       headers: {
-        "x-rapidapi-host":"quick-easy-sms.p.rapidapi.com",
+        "x-rapidapi-host": "quick-easy-sms.p.rapidapi.com",
         "x-rapidapi-key": process.env.RAPID_API_KEY,
-        'content-type': 'application/x-www-form-urlencoded',
-        useQueryString: true
+        "content-type": "application/x-www-form-urlencoded",
+        useQueryString: true,
       },
-      form: {message: message, toNumber: toNumber}
+      form: { message: message, toNumber: toNumber },
     };
 
-// let tries = 0
-//intervalId = setInterval(
-  //tries ++
-  // if(tries > 10){
-  //   clearInterval(intervalId)
-  // }
-  //request(options, function(err, res, body){}),
-  //  100000)
-  // )
+    // let tries = 0
+    //intervalId = setInterval(
+    //tries ++
+    // if(tries > 10){
+    //   clearInterval(intervalId)
+    // }
+    //request(options, function(err, res, body){}),
+    //  100000)
+    // )
     request(options, function (error, response, body) {
-      if (error){
-        console.error('error sending text is: ', error);
-        res.status(500).end('error is: ', error.message)
+      if (error) {
+        console.error("error sending text is: ", error);
+        res.status(500).end("error is: ", error.message);
       }
-      console.log('text successfully send')
-      res.json('Successfully Send the message!')
+      console.log("text successfully send");
+      res.json("Successfully Send the message!");
     });
-});
+  });
 
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
     res.json(req.user);
   });
 
-  app.put("/api/user_data", passport.authenticate("local"), async function (req, res) {
+  app.put("/api/user_data", passport.authenticate("local"), async function (
+    req,
+    res
+  ) {
     console.log(req.body);
     console.log(req.user.id);
     const user = await db.User.findOne({
       where: {
-        id: req.user.id
-      }
+        id: req.user.id,
+      },
     });
 
     await user.changePassword(req.body.newPassword);
@@ -64,28 +65,28 @@ module.exports = function (app) {
   });
 
   // PUT route for updating contacts. We can get the updated contact data from req.body
-  app.put("/api/user_data/:iceName", async function(req, res) {
+  app.put("/api/user_data/:iceName", async function (req, res) {
     // Update takes in an object describing the properties we want to update, and
     // we use where to describe which objects we want to update
     const user = await db.User.findOne({
       where: {
-        id: req.user.id
-      }
+        id: req.user.id,
+      },
     });
-    await user.changeContact(req.body.iceName,req.body.icePhone,req.user.id);
+    await user.changeContact(req.body.iceName, req.body.icePhone, req.user.id);
     res.status(200).send("Contact updated");
   });
 
   // PUT route for updating contacts. We can get the updated contact data from req.body
-  app.put("/api/user_data/:iceName", async function(req, res) {
+  app.put("/api/user_data/:iceName", async function (req, res) {
     // Update takes in an object describing the properties we want to update, and
     // we use where to describe which objects we want to update
     const user = await db.User.findOne({
       where: {
-        id: req.user.id
-      }
+        id: req.user.id,
+      },
     });
-    await user.changeContact(req.body.iceName,req.body.icePhone,req.user.id);
+    await user.changeContact(req.body.iceName, req.body.icePhone, req.user.id);
     res.status(200).send("Contact updated");
   });
 
@@ -129,12 +130,10 @@ module.exports = function (app) {
         username: req.user.username,
         iceName: req.user.iceName,
         icePhone: req.user.icePhone,
-        id: req.user.id
+        id: req.user.id,
       });
     }
   });
 
   // route for text api
-
-
 };
