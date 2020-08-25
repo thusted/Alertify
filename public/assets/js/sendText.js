@@ -8,7 +8,7 @@ $(document).ready(function() {
     const successCallback = (position) => {
       const lat = position.coords.latitude;
       const long = position.coords.longitude;
-      const apiKey = "AIzaSyBos6JoNIqsI5Qz1VH0TsonjPQw4fp4zb0";
+      const apiKey = "AIzaSyBTHG7Q8WoPwWgU3X7vJfY9EM1vSLru-m8";
       const location = "https://www.google.com/maps/embed/v1/search?key=" + apiKey + "&q=" + lat +"," + long + "&zoom=17&maptype=satellite";
       $("#embedMap").html(`<iframe width="600" height="450" frameborder="0" style="border:0" src=' ${location} '"allowfullscreen"</iframe>`);
       const textLocationURL = "http://maps.google.com/?q=" + lat + "," + long;
