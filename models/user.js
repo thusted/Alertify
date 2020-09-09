@@ -87,20 +87,7 @@ module.exports = function(sequelize, DataTypes) {
         id:id
       }
     });
-  }
-
-  // User.prototype.changeContact = async function(){
-  //   const newIceName = data.iceName;
-  //   const newIceNumber = data.iceNumber;
-  //   return await User.update({
-  //     iceName: newIceName,
-  //     iceNumber: newIceNumber
-  //   }, {
-  //     where: {
-  //       id: this.id
-  //     }
-  //   });
-  // }
+  };
 
   // Hooks are automatic methods that run during various phases of the User Model lifecycle
   // In this case, before a User is created, we will automatically hash their password

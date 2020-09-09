@@ -9,7 +9,6 @@ $(document).ready(function () {
   var iceName = $("input#iceName");
   var icePhone = $("input#icePhone");
 
-
   function handleLoginErr(err) {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);

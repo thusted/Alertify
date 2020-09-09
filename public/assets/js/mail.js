@@ -6,4 +6,4 @@ document.getElementById("emailSubmit").addEventListener("click", function (e) {
   var msg = `${body}%0d%0a%0d%0aRegards, ${name}`;
   console.log(subject,msg);
   window.open(`mailto:teamalertify@gmail.com?subject=${subject}&body=${msg}`);
-}); 
+});

@@ -41,7 +41,7 @@ $(document).ready(function() {
       });
 
       $("#ok").on("click", function() {
-        //Take user back to members page
+        //Redirect user back to members page
         window.location.replace("./members.html");
       });
     };
@@ -51,7 +51,7 @@ $(document).ready(function() {
       console.error(error);
     };
 
-    navigator.geolocation.watchPosition(successCallback, errorCallback);
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
   });
 });
 
