@@ -14,50 +14,25 @@ $(document).ready(function() {
       const textLocationURL = "http://maps.google.com/?q=" + lat + "," + long;
 
       //Settings for Quick Easy SMS API
-      // const settings = {
-      //   "async": true,
-      //   "crossDomain": true,
-      //   "url": "https://quick-easy-sms.p.rapidapi.com/send",
-      //   "method": "POST",
-      //   "headers": {
-      //     "x-rapidapi-host": "quick-easy-sms.p.rapidapi.com",
-      //     "x-rapidapi-key": process.env.RAPID_API_KEY,
-      //     "content-type": "application/x-www-form-urlencoded"
-      //   },
-      //   "data": {
-      //     "callbackURL": "https://example.com/abcd",
-      //     "message": username + " has shared their location on Alertify. Click here to find their current location: " + textLocationURL,
-      //     "toNumber": "1" + icePhone //User's emergency contact
-      //   }
-      // };
-
-      const settings2 = {
+      const settings = {
         "url": "/api/text",
         "method": "POST",
         "data": {
           "message": username + " has shared their location on Alertify. Click here to find their current location: " + textLocationURL,
           "toNumber": "1" + icePhone //User's emergency contact
         }
-      }
+      };
 
       //Function to make AJAX calls that send text message
       function sendText() {
-        $.ajax(settings2).done(function(response) {
+        $.ajax(settings).done(function(response) {
           console.log(response);
         });
       }
 
-      // // Start sending messages to User's emergency contacts every minute until "I'm Okay" button is pressed
-      function continuousText() {
-        sendText();
-        // setTimeout(function() {
-        //   continuousText();
-        // }, 30000);
-      }
-
       //Hitting the "Alertify" button will call our continuousText function
       $("#tracking").on("click", function() {
-        continuousText();
+        sendText();
         console.log("username is: " + username);
         console.log("ice number is: " + icePhone);
         alert("Your emergency contact has been Alertified.");
@@ -66,8 +41,8 @@ $(document).ready(function() {
       });
 
       $("#ok").on("click", function() {
-        clearTimeout(continuousText());
-        console.log("You pressed me");
+        //Redirect user back to members page
+        window.location.replace("./members.html");
       });
     };
 
@@ -76,11 +51,7 @@ $(document).ready(function() {
       console.error(error);
     };
 
-    //we will come back to watchId later when "I'm ok" button is created
-    // const watchId =
-    navigator.geolocation.watchPosition(successCallback, errorCallback);
-    //if button is pressed to be safe
-    //navigator.geolocation.clearWatch(watchId);
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
   });
 });
 

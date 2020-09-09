@@ -1,13 +1,10 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
-const axios = require("axios");
+//const axios = require("axios");
 var passport = require("../config/passport");
 
 module.exports = function (app) {
-  // Using the passport.authenticate middleware with our local strategy.
-  // If the user has valid login credentials, send them to the members page.
-  // Otherwise the user will be sent an error
-
+  // route for text api
   app.post("/api/text", function (req, res) {
     const { toNumber, message } = req.body;
 
@@ -25,16 +22,8 @@ module.exports = function (app) {
       form: { message: message, toNumber: toNumber },
     };
 
-    // let tries = 0
-    //intervalId = setInterval(
-    //tries ++
-    // if(tries > 10){
-    //   clearInterval(intervalId)
-    // }
-    //request(options, function(err, res, body){}),
-    //  100000)
-    // )
-    request(options, function (error, response, body) {
+    request(options, function (error, textApiResponse) {
+      console.log("text Api resopnded with: ", textApiResponse);
       if (error) {
         console.error("error sending text is: ", error);
         res.status(500).end("error is: ", error.message);
@@ -44,6 +33,9 @@ module.exports = function (app) {
     });
   });
 
+  // Using the passport.authenticate middleware with our local strategy.
+  // If the user has valid login credentials, send them to the members page.
+  // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
     res.json(req.user);
   });
@@ -134,6 +126,4 @@ module.exports = function (app) {
       });
     }
   });
-
-  // route for text api
 };
