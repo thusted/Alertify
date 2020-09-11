@@ -53,7 +53,7 @@ module.exports = function (app) {
     });
 
     await user.changePassword(req.body.newPassword);
-    res.status(200).send("Password updated");
+    res.status(200).send("Password updated").redirect("/");
   });
 
   // PUT route for updating contacts. We can get the updated contact data from req.body
@@ -66,20 +66,7 @@ module.exports = function (app) {
       },
     });
     await user.changeContact(req.body.iceName, req.body.icePhone, req.user.id);
-    res.status(200).send("Contact updated");
-  });
-
-  // PUT route for updating contacts. We can get the updated contact data from req.body
-  app.put("/api/user_data/:iceName", async function (req, res) {
-    // Update takes in an object describing the properties we want to update, and
-    // we use where to describe which objects we want to update
-    const user = await db.User.findOne({
-      where: {
-        id: req.user.id,
-      },
-    });
-    await user.changeContact(req.body.iceName, req.body.icePhone, req.user.id);
-    res.status(200).send("Contact updated");
+    res.status(200).send("Contact updated").redirect("/");
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to

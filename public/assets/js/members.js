@@ -36,6 +36,8 @@ $(document).ready(function () {
           newPassword: $("#passwordUpdateNew")[0].value,
         }
       });
+      alert("Password Updated");
+      window.location.reload();
     });
   });
 
@@ -60,6 +62,8 @@ $(document).ready(function () {
           console.log(data);
         }
       });
+      alert("Emergency Contact Updated");
+      window.location.reload();
     });
   });
 });
